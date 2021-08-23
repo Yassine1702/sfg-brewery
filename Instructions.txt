@@ -1,0 +1,4 @@
+1- create project throught spring initializer
+2- add lombok Struct actuator
+3- pref -> build -> compiler -> annotation -> enable annotation processing
+4- install lombok & mapstruct support pluggins
