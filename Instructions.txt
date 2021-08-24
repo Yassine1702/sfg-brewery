@@ -2,3 +2,11 @@
 2- add lombok Struct actuator
 3- pref -> build -> compiler -> annotation -> enable annotation processing
 4- install lombok & mapstruct support pluggins
+-----------------------------
+Problème :
+        dans le github j'avais comme branche principal main
+        quand je fesais git push --set-upstream origin master
+        ca me creer une nouvelle branch master
+        il faut juste faire la commande suivante : git branch --move master main
+        comme ca localement on aura plus master mais main
+------------------------------
