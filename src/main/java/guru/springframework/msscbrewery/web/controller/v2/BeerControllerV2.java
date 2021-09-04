@@ -1,4 +1,4 @@
-package guru.springframework.msscbrewery.web.controller.V2;
+package guru.springframework.msscbrewery.web.controller.v2;
 
 
 import guru.springframework.msscbrewery.services.V2.BeerServiceV2;

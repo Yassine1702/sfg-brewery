@@ -2,7 +2,7 @@ package guru.springframework.msscbrewery.web.controller;
 
 import guru.springframework.msscbrewery.services.BeerService;
 import guru.springframework.msscbrewery.web.model.BeerDto;
-import org.apache.coyote.Response;
+
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -26,11 +26,11 @@ public class BeerController {
     }
 
     @PostMapping
-    public ResponseEntity<BeerDto> handlePost(@RequestBody BeerDto beerDto){
+    public ResponseEntity handlePost(@RequestBody BeerDto beerDto){
         BeerDto savedDto = beerService.saveNewBeer(beerDto);
         HttpHeaders headers = new HttpHeaders();
         headers.add("Location", "/api/v1/beer/"+savedDto.getId().toString());
-        return new ResponseEntity<>(headers,HttpStatus.CREATED);
+        return new ResponseEntity(headers,HttpStatus.CREATED);
     }
 
     @PutMapping("/{beerId}")
@@ -41,6 +41,8 @@ public class BeerController {
 
     @DeleteMapping("{beerId}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
+    // quand on veut tester le delete on peut verifier qu'il y'a une erreur avec le BAD_REQUEST
+    // @ResponseStatus(HttpStatus.BAD_REQUEST)
     public void deleteBeer(@PathVariable("beerId") UUID beerId){
         beerService.deleteBeer(beerId);
     }
